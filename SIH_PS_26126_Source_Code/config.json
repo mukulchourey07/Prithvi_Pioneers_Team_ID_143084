@@ -1,0 +1,76 @@
+{
+  "camera": {
+    "width": 640,
+    "height": 480,
+    "camera_height_m": 1.0,
+    "horizontal_fov_degrees": 76.0,
+    "horizon_fraction": 0.25,
+    "max_ground_range_m": 12.0
+  },
+  "perception": {
+    "minimum_obstacle_area_px": 160,
+    "minimum_obstacle_width_px": 8,
+    "minimum_obstacle_height_px": 8,
+    "ground_adaptation_alpha": 0.15,
+    "dark_ditch_value": 52,
+    "tree_min_area_px": 900,
+    "object_detector": {
+      "enabled": true,
+      "model_path": "yolov8n.pt",
+      "confidence": 0.45,
+      "inference_interval_frames": 2
+    },
+    "yolop": {
+      "enabled": true,
+      "input_size": 640,
+      "min_drivable_coverage": 0.03
+    }
+  },
+  "mapping": {
+    "resolution_m": 0.20,
+    "width_m": 30.0,
+    "height_m": 30.0,
+    "origin_x_m": -15.0,
+    "origin_y_m": -2.0,
+    "robot_radius_m": 0.50
+  },
+  "vo": {
+    "focal_length_px": 520.0,
+    "principal_point_x": 320.0,
+    "principal_point_y": 240.0,
+    "vo_scale_m_per_frame": 0.10,
+    "min_inliers": 12,
+    "max_features": 1200
+  },
+  "slam": {
+    "enabled": false,
+    "vocabulary_path": "slam/ORBvoc.txt",
+    "settings_path": "slam/ugv_camera.yaml",
+    "metric_scale_m_per_slam_unit": 1.0,
+    "pose_convention": "Tcw"
+  },
+  "controller": {
+    "lookahead_m": 1.3,
+    "max_steering_rad": 0.55,
+    "cruise_throttle": 0.42,
+    "local_corridor_speed_scale": 0.50,
+    "arrival_radius_m": 0.55
+  },
+  "overtake": {
+    "enabled": true,
+    "trigger_distance_m": 7.0,
+    "path_half_width_m": 0.85,
+    "lateral_offset_m": 1.25,
+    "clear_ahead_m": 1.4,
+    "speed_scale": 0.45,
+    "allowed_labels": ["person", "vehicle", "bicycle", "animal", "obstacle"]
+  },
+  "vehicle": {
+    "type": "simulated",
+    "armed": false,
+    "port": "COM3",
+    "baudrate": 115200,
+    "timeout_s": 0.1
+  },
+  "goal": [0.0, 18.0]
+}

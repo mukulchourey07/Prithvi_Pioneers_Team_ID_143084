@@ -1,0 +1,14 @@
+-r requirements.txt
+# Runtime dependencies declared by the official HUST YOLOP project.
+scipy>=1.4.1
+tqdm
+yacs
+Cython
+matplotlib>=3.2.2
+Pillow
+PyYAML>=5.3
+tensorboardX
+seaborn
+prefetch_generator
+imageio
+scikit-learn
